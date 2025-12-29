@@ -79,7 +79,7 @@ class Transaction(models.Model):
         on_delete=models.PROTECT,
         related_name="transactions",
     )
-    description = models.CharField(max_length=500)
+    description = models.CharField(max_length=500, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def clean(self):
