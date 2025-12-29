@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'backend_app',
     'rest_framework',
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,6 +44,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -68,7 +70,18 @@ TEMPLATES = [
     },
 ]
 
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:19006",      # Expo dev
+    "http://localhost:8081",       # React Native Metro
+    "exp://*",                     # Expo tunnel
+    "http://127.0.0.1:19006",
+]
+
+CORS_ALLOW_CREDENTIALS = True
+
 WSGI_APPLICATION = 'backend_project.wsgi.application'
+
 
 
 # Database
