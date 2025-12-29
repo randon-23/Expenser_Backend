@@ -16,8 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.http import HttpRequest
+from django.shortcuts import redirect
+
+def root_redirect_view(request: HttpRequest):
+    return redirect('api/')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('backend_app.urls'))
+    path('api/', include('backend_app.urls')),
+    path('', root_redirect_view)
 ]
