@@ -25,8 +25,11 @@ SECRET_KEY = 'django-insecure-b^)3lbua98(7*(jdx2lw11u)aoz+0@)%$z(4)-83s&)()og1+p
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    '192.168.1.232',  # Add your PC's IP address
+]
 
 # Application definition
 
@@ -71,12 +74,12 @@ TEMPLATES = [
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:19006",      # Expo dev
-    "http://localhost:8081",       # React Native Metro
-    "exp://*",                     # Expo tunnel
-    "http://127.0.0.1:19006",
-]
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:19006",      # Expo dev
+#     "http://localhost:8081",       # React Native Metro
+#     "exp://*",                     # Expo tunnel
+#     "http://127.0.0.1:19006",
+# ]
 
 CORS_ALLOW_CREDENTIALS = True
 
