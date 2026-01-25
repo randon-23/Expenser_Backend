@@ -16,6 +16,8 @@ media/
 # VS Code / PyCharm
 .vscode/
 .idea/
+# Environment variables
+.env
 
 # OS
 .DS_Store
